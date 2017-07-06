@@ -1,0 +1,30 @@
+<div>
+  <div>
+    id: {{ currentUser.id }}
+  </div>
+  <div>
+    <input type="text" [value]="currentUser.username" #usernameInput placeholder="Enter user name" />
+  </div>
+  <div>
+    <input type="text" [value]="currentUser.email" #emailInput placeholder="Enter email" />
+  </div>
+  <div>
+    <button (click)="updateUser(usernameInput.value,emailInput.value)" >Save</button>
+  </div>
+</div>
+<div class="user-item">
+  <div>
+      <img [src]="currentUser.info.avatar" />
+  </div>
+  <div>
+    <div>
+      id: {{ currentUser.id}}
+    </div>
+    <div>
+      username:{{ currentUser.username}}
+    </div>
+    <div>
+      email: {{ currentUser.email }}
+    </div>
+  </div>
+</div>
