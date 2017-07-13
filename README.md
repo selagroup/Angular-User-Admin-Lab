@@ -77,5 +77,14 @@ In This project we will build step by step a User Admin angular application.
   - The edit form should display only when there is a `currentUser` selected (use *ngIf).
   - When an item is clicked it should be displayed with a colored background (use *ngClass).
   
-  
+### Step5  - Composition
+
+  - break the `user-container.component` into 2 seperate components.
+    - `user-list.component` handling the user list.
+    - `user-edit.component` handling the user edit form.
+ - The new component should **not** handle data but only recieve it as inputs and emit events as outputs.
+ - The data will be passed from the `user-container.component`.
+ - Create a `users.module` module and declare the 3 components inside it.
+ - remove decleration `user-container.component` from `app.module` and add the `user.module` module as an import.
+ 
    
