@@ -1,0 +1,12 @@
+<div>
+  id: {{ user.id }}
+</div>
+<div>
+  <input type="text" [value]="user.username" #usernameInput placeholder="Enter user name" />
+</div>
+<div>
+  <input type="text" [value]="user.email" #emailInput placeholder="Enter email" />
+</div>
+<div>
+  <button (click)="onSaveClicked(usernameInput.value,emailInput.value)" >Save</button>
+</div>
