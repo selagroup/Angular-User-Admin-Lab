@@ -62,11 +62,20 @@ In This project we will build step by step a User Admin angular application.
         }
       }
     ```
-  - inside the `user-container.component` add `UserModel` property `currentUser` and instantiate it with random data inside the `ngOnInit` hook.
+  - inside the `user-container.component` add  a `currentUser` property of type 'UserModel' and instantiate it with random data inside the `ngOnInit` hook.
   - replace the template you created in step 2 to display data bound info from the `currentUser` property.
   - Add A simple form to the `user-container.component` with 2 text fields for the user name and email, and a Save button.
   - The input fields should also use data binding to display the `currentUser` fields, allowing us to edit the fields.
   - Clicking the save button should update the `currentUser` property and that should automatically update all the `currentUser` data across the template.
 
 ### Step4  - Directives
+
+  - inside the `user-container.component` add a `users` property of type `Array<UserModel>`instantiate it inside the `ngOnInit` hook with an array containing random users.
+  - remove the instantiation of the `currentUser`.
+  - use the `*ngFor` directive to loop over the `users` array and render the user element for every item in the array.
+  - For every item add a click event that will set the `currentUser` to the user item that was clicked.
+  - The edit form should display only when there is a `currentUser` selected (use *ngIf).
+  - When an item is clicked it should be displayed with a colored background (use *ngClass).
+  
+  
    
