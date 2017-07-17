@@ -68,7 +68,7 @@ In This project we will build step by step a User Admin angular application.
   - The input fields should also use data binding to display the `currentUser` fields, allowing us to edit the fields.
   - Clicking the save button should update the `currentUser` property and that should automatically update all the `currentUser` data across the template.
 
-### Step4  - Directives
+### Step 4  - Directives
 
   - inside the `user-container.component` add a `users` property of type `Array<UserModel>`instantiate it inside the `ngOnInit` hook with an array containing random users.
   - remove the instantiation of the `currentUser`.
@@ -77,7 +77,7 @@ In This project we will build step by step a User Admin angular application.
   - The edit form should display only when there is a `currentUser` selected (use *ngIf).
   - When an item is clicked it should be displayed with a colored background (use *ngClass).
   
-### Step5  - Composition
+### Step 5  - Composition
 
   - break the `user-container.component` into 2 seperate components.
     - `user-list.component` handling the user list.
@@ -85,6 +85,18 @@ In This project we will build step by step a User Admin angular application.
  - The new component should **not** handle data but only recieve it as inputs and emit events as outputs.
  - The data will be passed from the `user-container.component`.
  - Create a `users.module` module and declare the 3 components inside it.
- - remove decleration `user-container.component` from `app.module` and add the `user.module` module as an import.
+ - remove declaration `user-container.component` from `app.module` and add the `user.module` module as an import.
+  
+### Step 6  - Services
+
+  - create a new `users.service` class with 3 methods `getUser`,`updateUser`,`deleteUser`.
+  - Add the appropriate provider to the `users.module`.
+  - move the `users` property and it's instantiation from the `user-container-component` into the service.
+  - now for the `user-container` should use the injected service to get the users list and updating the user inside.
+  - inside the `user-edit.component` add a delete button that allows you to delete a user.
+  - the delete button should emit a delete click event that should be handled inside the `user-container.component` which in turn should invoke the delete method on the service.
+  
+### Step 7  - Http
+  
  
    
