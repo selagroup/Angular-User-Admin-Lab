@@ -89,7 +89,7 @@ In This project we will build step by step a User Admin angular application.
   
 ### Step 6  - Services
 
-  - create a new `users.service` class with 3 methods `getUser`,`updateUser`,`deleteUser`.
+  - create a new `users.service` class with 3 methods `getUsers`,`updateUser`,`deleteUser`.
   - Add the appropriate provider to the `users.module`.
   - move the `users` property and it's instantiation from the `user-container-component` into the service.
   - now for the `user-container` should use the injected service to get the users list and updating the user inside.
@@ -97,6 +97,34 @@ In This project we will build step by step a User Admin angular application.
   - the delete button should emit a delete click event that should be handled inside the `user-container.component` which in turn should invoke the delete method on the service.
   
 ### Step 7  - Http
+
+  #### Http Server
+  - Before starting to work with the http client we would require server.
+  - to run the server, open another terminal window and go to the `server` folder.
+  - inside the `server` folder run:
+    ```bash
+      npm start
+    ```
+  - now we have restful api running on port 3000
+  - the server follows restful practices, so for the `users` resource we will be using
+  the following endpoints
+  ```
+    Get All users - GET http://localhost:3000/users
+    Get Specific User - GET http://localhost:3000/users/{id}
+    Create user - POST http://localhost:3000/users
+    Update user - PUT http://localhost:3000/users/{id}
+    Delete user - DELETE http://localhost:3000/users/{id}
+  ```
+  
+  #### Client
+    - Refactor the user service from the Previous Step to work with Angular's Http client.
+    - The 3 methods `getUsers`,`updateUser`,`deleteUser` should now use the Http client to call the appropriate api endpoint as detailed above.
+    - Remeber that now the methods are async and should return an Observable that should be subscribed to.
+  
+  
+  
+  
+
   
  
    
