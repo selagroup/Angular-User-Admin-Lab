@@ -1,0 +1,5 @@
+<div *ngIf="currentUser">
+  <app-user-edit [user]="currentUser"
+                 (onUserUpdated)="updateUser($event)"
+                 (onUserDeleted)="deleteUser($event)"  ></app-user-edit>
+</div>

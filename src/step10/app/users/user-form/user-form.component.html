@@ -1,0 +1,71 @@
+<form novalidate="novalidate" #userForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <div>
+      <label>
+        username : <input placeholder="Enter Username"
+          name="username"
+          [(ngModel)]="user.username"
+          #username="ngModel"
+          required
+          [minlength]="4"
+
+      />
+      </label>
+      <div *ngIf="username.touched && !username.valid">
+        <div class="error-alert">
+          <span *ngIf="username.errors.required">
+            This field is required.
+          </span>
+          <span *ngIf="username.errors.minlength">
+            Username must be at least 4 characters.
+          </span>
+        </div>
+      </div>
+  </div>
+  <div>
+    <label>
+      email : <input placeholder="Enter email"
+           name="email"
+           [(ngModel)] ="user.email"
+           #email="ngModel"
+           required
+           [pattern]="emailPattern"
+    />
+    </label>
+    <div *ngIf="email.touched && !email.valid">
+      <div class="error-alert">
+          <span *ngIf="email.errors.required">
+            This field is required.
+          </span>
+        <span *ngIf="email.errors.pattern">
+            Please Enter a valid email
+          </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label>
+      first Name : <input placeholder="Enter first Name"
+                          [(ngModel)] ="user.firstName"
+                          name="firstName"/>
+    </label>
+  </div>
+  <div>
+    <label>
+      last Name : <input placeholder="Enter last Name"
+                         [(ngModel)] ="user.lastName"
+                         name="lastName"/>
+    </label>
+  </div>
+  <div>
+    <label>
+      avatar : <input placeholder="Enter Avatar Url"
+                      [(ngModel)] ="user.avatar"
+                      name="avatar" />
+    </label>
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="!userForm.form.valid" >Submit</button>
+  </div>
+</form>
