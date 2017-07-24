@@ -131,8 +131,13 @@ In This project we will build step by step a User Admin angular application.
       - `/users/{id}` - will display the user view containing the user edit form mappaed to the `user-edit-container.component`.
  - Update the components code so that when clicking on a user inside the list we will be recirected to the user edit route.
  - in the user edit view clicking on save should now redirect back to the list when saving is finished and clicking on cancel just redirects back to the users list view.
-      
-      
+
+### Step 9 - Pipes
+
+  - Create a new Pipe named `ellipsis.pipe`.
+  - The `ellipsis.pipe` should to text ellipsis on the input value. And should receive a `count` parameter for how many characters are allowed.
+  - Use the `ellpisis.pipe` in the user items inside the users list.
+  - Change The `users-container.component` users list bindings to an observable and use the async pipe on the input binding of the `user-list.component`.
 
   
  
