@@ -108,7 +108,7 @@ In This project we will build step by step a User Admin angular application.
   - now we have restful api running on port 3000
   - the server follows restful practices, so for the `users` resource we will be using
   the following endpoints
-  ```
+  ``` javascript
     Get All users - GET http://localhost:3000/users
     Get Specific User - GET http://localhost:3000/users/{id}
     Create user - POST http://localhost:3000/users
@@ -117,13 +117,22 @@ In This project we will build step by step a User Admin angular application.
   ```
   
   #### Client
-    - Refactor the user service from the Previous Step to work with Angular's Http client.
-    - The 3 methods `getUsers`,`updateUser`,`deleteUser` should now use the Http client to call the appropriate api endpoint as detailed above.
-    - Remeber that now the methods are async and should return an Observable that should be subscribed to.
-  
-  
-  
-  
+  - Refactor the user service from the Previous Step to work with Angular's Http client.
+  - The 3 methods `getUsers`,`updateUser`,`deleteUser` should now use the Http client to call the appropriate api endpoint as detailed above.
+  - Remember that now the methods are async and should return an Observable that should be subscribed to.
+
+
+### Step 8 - Routing
+  - Create a new `app.routing` module the will hold the main root route.
+    -the main route should basically should be a redirect route from the root path to `/users`.
+  - Create a new `users.routing` that will hold the routes for the users views.
+  - Create 2 new routes 
+      - `/users`  - will display the list, mapped to the `users-container.component`
+      - `/users/{id}` - will display the user view containing the user edit form mappaed to the `user-edit-container.component`.
+ - Update the components code so that when clicking on a user inside the list we will be recirected to the user edit route.
+ - in the user edit view clicking on save should now redirect back to the list when saving is finished and clicking on cancel just redirects back to the users list view.
+      
+      
 
   
  
