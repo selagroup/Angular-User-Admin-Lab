@@ -139,7 +139,7 @@ In This project we will build step by step a User Admin angular application.
   - Use the `ellpisis.pipe` in the user items inside the users list.
   - Change The `users-container.component` users list bindings to an observable and use the async pipe on the input binding of the `user-list.component`.
 
-### Step 10 - Froms
+### Step 10 - Forms
   
  
    
