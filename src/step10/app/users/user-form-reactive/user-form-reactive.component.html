@@ -1,0 +1,53 @@
+<form novalidate="novalidate" [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+
+  <div>
+    <label>
+      username : <input placeholder="Enter Username" formControlName="username"/>
+    </label>
+    <div *ngIf="userForm && userForm.get('username').touched && !userForm.get('username').valid">
+      <div class="error-alert">
+          <span *ngIf="userForm.get('username').errors.required">
+            This field is required.
+          </span>
+        <span *ngIf="userForm.get('username').errors.minlength">
+            Username must be at least 4 characters.
+          </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label>
+      email : <input placeholder="Enter email" formControlName="email" />
+    </label>
+    <div *ngIf="userForm && userForm.get('email').touched && !userForm.get('email').valid">
+      <div class="error-alert">
+          <span *ngIf="userForm.get('email').errors.required">
+            This field is required.
+          </span>
+        <span *ngIf="userForm.get('email').errors.pattern">
+            Please Enter a valid email
+          </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label>
+      first Name : <input placeholder="Enter first Name" formControlName="firstName" />
+    </label>
+  </div>
+  <div>
+    <label>
+      last Name : <input placeholder="Enter last Name" formControlName="lastName" />
+    </label>
+  </div>
+  <div>
+    <label>
+      avatar : <input placeholder="Enter Avatar Url" formControlName="avatar" />
+    </label>
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="!userForm.valid" >Submit</button>
+  </div>
+
+</form>

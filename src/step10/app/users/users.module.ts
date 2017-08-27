@@ -9,21 +9,24 @@ import { UserEditContainerComponent } from './user-edit-container/user-edit-cont
 import {SharedModule} from "../shared/shared.module";
 import {UserNewContainerComponent} from "./user-new-container/user-new-container.component";
 import {UserFormComponent} from "./user-form/user-form.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { UserFormReactiveComponent } from './user-form-reactive/user-form-reactive.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     UsersRouting,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [UserContainerComponent,
       UsersListComponent,
     UserEditComponent,
     UserEditContainerComponent,
     UserNewContainerComponent,
-    UserFormComponent],
+    UserFormComponent,
+    UserFormReactiveComponent],
   exports:[UserContainerComponent],
   providers:[UsersService]
 })
