@@ -1,37 +1,47 @@
-<div *ngIf="currentUser">
-  <div>
-    id: {{ currentUser.id }}
-  </div>
-  <div>
-    <input type="text" [value]="currentUser.username" #usernameInput placeholder="Enter user name" />
-  </div>
-  <div>
-    <input type="text" [value]="currentUser.email" #emailInput placeholder="Enter email" />
-  </div>
-  <div>
-    <button (click)="updateUser(usernameInput.value,emailInput.value)" >Save</button>
-  </div>
-</div>
-
-<div *ngFor="let user of users">
-  <div class="user-item" (click)="onItemClicked(user)"[ngClass]="{selected:currentUser && currentUser.id === user.id}" >
-    <div>
-      <img [src]="user.info.avatar" />
-    </div>
-    <div>
+<div class="container">
+  <div class="row">
+    <div class="form-group" *ngIf="currentUser">
       <div>
-        id: {{ user.id}}
+        id: {{ currentUser.id }}
       </div>
       <div>
-        username:{{ user.username}}
+        <input class="form-control" type="text" [value]="currentUser.username" #usernameInput placeholder="Enter user name" />
       </div>
       <div>
-        email: {{ user.email }}
-      </div>
-      <div>
-        Job Title: {{ user.info.jobTitle }}
+        <input class="form-control" type="text" [value]="currentUser.email" #emailInput placeholder="Enter email" />
       </div>
     </div>
-  </div>
+      <div>
+        <button class="btn btn-default" (click)="updateUser(usernameInput.value,emailInput.value)" >Save</button>
+      </div>
 
+  </div>
+  <div class="row">
+    <div class="container">
+
+        <div class="row" *ngFor="let user of users">
+
+          <div class="col-sm-4 user-item" (click)="onItemClicked(user)"[ngClass]="{selected:currentUser && currentUser.id === user.id}" >
+            <div>
+              <img class="img-thumbnail" [src]="user.info.avatar" />
+            </div>
+            <div>
+              <div>
+                id: {{ user.id}}
+              </div>
+              <div>
+                username:{{ user.username}}
+              </div>
+              <div>
+                email: {{ user.email }}
+              </div>
+              <div>
+                Job Title: {{ user.info.jobTitle }}
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
 </div>

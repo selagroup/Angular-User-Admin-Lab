@@ -1,8 +1,8 @@
 <div class="container">
   <form class="form-group" novalidate="novalidate" #userForm="ngForm" (ngSubmit)="onSubmit()">
   <div>
-      <label class="label">
-        Username : <input class="form-group" placeholder="Enter Username"
+      <label class="control-label">
+        Username <input class="form-control" placeholder="Enter Username"
           name="username"
           [(ngModel)]="user.username"
           #username="ngModel"
@@ -12,7 +12,7 @@
       />
       </label>
       <div *ngIf="username.touched && !username.valid">
-        <div class="error-alert">
+        <div class="label label-danger">
           <span *ngIf="username.errors.required">
             This field is required.
           </span>
@@ -23,8 +23,8 @@
       </div>
   </div>
   <div>
-    <label>
-      Email : <input placeholder="Enter email"
+    <label class="control-label">
+      Email  <input class="form-control" placeholder="Enter email"
            name="email"
            [(ngModel)] ="user.email"
            #email="ngModel"
@@ -33,7 +33,7 @@
     />
     </label>
     <div *ngIf="email.touched && !email.valid">
-      <div class="error-alert">
+      <div class="class="label label-danger">
           <span *ngIf="email.errors.required">
             This field is required.
           </span>
@@ -41,32 +41,32 @@
             Please Enter a valid email
           </span>
       </div>
-    </div>
-  </div>
+     </div>
   <div>
-    <label>
-      First Name : <input placeholder="Enter first Name"
+    <label class="control-label">
+      First Name <input class="form-control" placeholder="Enter first Name"
                           [(ngModel)] ="user.firstName"
                           name="firstName"/>
     </label>
   </div>
   <div>
-    <label>
-      Last Name : <input placeholder="Enter last Name"
+    <label class="control-label">
+      Last Name <input class="form-control" placeholder="Enter last Name"
                          [(ngModel)] ="user.lastName"
                          name="lastName"/>
     </label>
   </div>
   <div>
-    <label>
-      Avatar : <input placeholder="Enter Avatar Url"
+    <label class="control-label">
+      Avatar : <input class="form-control"
+                        placeholder="Enter Avatar Url"
                       [(ngModel)] ="user.avatar"
                       name="avatar" />
     </label>
   </div>
 
   <div>
-    <button type="submit" [disabled]="!userForm.form.valid" >Submit</button>
+    <button class="btn btn-default" type="submit" [disabled]="!userForm.form.valid" >Submit</button>
   </div>
 </form>
 </div>

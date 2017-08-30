@@ -1,22 +1,25 @@
-<div *ngFor="let user of users">
-  <div class="user-item" (click)="onItemClicked(user)"[ngClass]="{selected:currentUser && currentUser.id === user.id}" >
-    <div>
-      <img [src]="user.info.avatar" />
+<div class="container">
+  <div class="row" *ngFor="let user of users">
+    <div class="col-sm-4 user-item" (click)="onItemClicked(user)"[ngClass]="{selected:currentUser && currentUser.id === user.id}" >
+      <div>
+        <img class="img-thumbnail" [src]="user.info.avatar" />
+      </div>
+      <div>
+        <div>
+          id: {{ user.id}}
+        </div>
+        <div>
+          username:{{ user.username | ellipsis:5 }}
+        </div>
+        <div>
+          email: {{ user.email | ellipsis:20}}
+        </div>
+        <div>
+          Job Title: {{ user.info.jobTitle | ellipsis:10 }}
+        </div>
+      </div>
     </div>
-    <div>
-      <div>
-        id: {{ user.id}}
-      </div>
-      <div>
-        username:{{ user.username | ellipsis:5 }}
-      </div>
-      <div>
-        email: {{ user.email | ellipsis:20}}
-      </div>
-      <div>
-        Job Title: {{ user.info.jobTitle | ellipsis:10 }}
-      </div>
-    </div>
+
   </div>
 
 </div>

@@ -1,0 +1,6 @@
+
+input.ng-touched.ng-invalid{
+  background-color: lightpink;
+  border:solid 1px red;
+}
+
