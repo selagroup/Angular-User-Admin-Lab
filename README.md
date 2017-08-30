@@ -140,6 +140,19 @@ In This project we will build step by step a User Admin angular application.
   - Change The `users-container.component` users list bindings to an observable and use the async pipe on the input binding of the `user-list.component`.
 
 ### Step 10 - Forms
+  - Create a new route:
+    - `/users/new` will display a user form for creating a new user.
+  - The Form should contain the following user fields:
+    - Username - required, minimum 4 characters 
+    - Email - required, should be a valid email address.
+    - First Name
+    - Last Name
+    - avatar url
+  - Choose whether to implement this via a Template or Model driven approach.
+  - Create a new method `createUser` inside the `user.service` service.
+  - the new method should call the `Create user` endpoint.
+  - Implement the Form's submit method so that it calls the new  `user.service` method and upon a successful request navigate back to the user list view.
+   
   
  
    
