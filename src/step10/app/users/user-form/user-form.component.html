@@ -1,8 +1,8 @@
-<form novalidate="novalidate" #userForm="ngForm" (ngSubmit)="onSubmit()">
-
+<div class="container">
+  <form class="form-group" novalidate="novalidate" #userForm="ngForm" (ngSubmit)="onSubmit()">
   <div>
-      <label>
-        username : <input placeholder="Enter Username"
+      <label class="label">
+        Username : <input class="form-group" placeholder="Enter Username"
           name="username"
           [(ngModel)]="user.username"
           #username="ngModel"
@@ -24,7 +24,7 @@
   </div>
   <div>
     <label>
-      email : <input placeholder="Enter email"
+      Email : <input placeholder="Enter email"
            name="email"
            [(ngModel)] ="user.email"
            #email="ngModel"
@@ -45,21 +45,21 @@
   </div>
   <div>
     <label>
-      first Name : <input placeholder="Enter first Name"
+      First Name : <input placeholder="Enter first Name"
                           [(ngModel)] ="user.firstName"
                           name="firstName"/>
     </label>
   </div>
   <div>
     <label>
-      last Name : <input placeholder="Enter last Name"
+      Last Name : <input placeholder="Enter last Name"
                          [(ngModel)] ="user.lastName"
                          name="lastName"/>
     </label>
   </div>
   <div>
     <label>
-      avatar : <input placeholder="Enter Avatar Url"
+      Avatar : <input placeholder="Enter Avatar Url"
                       [(ngModel)] ="user.avatar"
                       name="avatar" />
     </label>
@@ -69,3 +69,4 @@
     <button type="submit" [disabled]="!userForm.form.valid" >Submit</button>
   </div>
 </form>
+</div>

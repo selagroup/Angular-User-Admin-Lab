@@ -20,7 +20,7 @@ export class UserFormReactiveComponent implements OnInit {
 
     this.userForm = this.fb.group({
       username:['',[Validators.required,Validators.minLength(4)]],
-      email:['',[Validators.required,Validators.email]],
+      email:['',[Validators.email]],
       firstName:'',
       lastName:'',
       avatar:''
