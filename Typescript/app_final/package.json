@@ -1,0 +1,11 @@
+{
+  "name": "typescript_ex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "tsctsc"
+  },
+  "author": "",
+  "license": "ISC"
+}
