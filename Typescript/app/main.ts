@@ -13,15 +13,15 @@ const ALBUM_MODEL:Album = {
     },
     image: [
         {
-            "#text": "https://lastfm-img2.akamaized.net/i/u/34s/2ce29f74a6f54b8791e5fdacc2ba36f5.png",
+            text: "https://lastfm-img2.akamaized.net/i/u/34s/2ce29f74a6f54b8791e5fdacc2ba36f5.png",
             size: "small"
         },
         {
-            "#text": "https://lastfm-img2.akamaized.net/i/u/64s/2ce29f74a6f54b8791e5fdacc2ba36f5.png",
+            text: "https://lastfm-img2.akamaized.net/i/u/64s/2ce29f74a6f54b8791e5fdacc2ba36f5.png",
             size: "medium"
         },
         {
-            "#text": "https://lastfm-img2.akamaized.net/i/u/174s/2ce29f74a6f54b8791e5fdacc2ba36f5.png",
+            text: "https://lastfm-img2.akamaized.net/i/u/174s/2ce29f74a6f54b8791e5fdacc2ba36f5.png",
             size: "large"
         },
         {

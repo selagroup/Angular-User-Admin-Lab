@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {UsersModule} from "./users/users.module";
 import {AppRouting} from "./app.routing";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import {AppRouting} from "./app.routing";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     UsersModule,
     AppRouting
   ],

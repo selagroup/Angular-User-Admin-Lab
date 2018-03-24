@@ -1,7 +1,6 @@
 const generator = require('./generateData');
 const path = require('path');
 const cors = require('cors');
-const markdown = require('express-markdown')
 let data = generator.generate(10);
 const jsonServer = require('json-server')
 const server = jsonServer.create()
