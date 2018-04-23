@@ -103,6 +103,8 @@ In This project we will build step by step a User Admin angular application.
   - to run the server, open another terminal window and go to the `server` folder.
   - inside the `server` folder run:
     ```bash
+      npm install
+      
       npm start
     ```
   - now we have restful api running on port 3000
