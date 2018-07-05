@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {UserModel} from "../../models/user.model";
+import {UserModel} from '../../models/user.model';
 
 @Component({
   selector: 'app-users-list',
@@ -8,20 +8,20 @@ import {UserModel} from "../../models/user.model";
 })
 export class UsersListComponent implements OnInit {
 
-  private currentUser:UserModel;
+  private currentUser: UserModel;
 
   @Input()
-  users:UserModel[];
+  users: UserModel[];
 
   @Output()
-  userClicked:EventEmitter<UserModel> = new EventEmitter();
+  userClicked: EventEmitter<UserModel> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onItemClicked(user:UserModel){
+  onItemClicked(user: UserModel){
     this.currentUser = user;
     this.userClicked.emit(user);
 

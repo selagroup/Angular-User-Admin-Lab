@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {IUserForm, UserModel} from "../../models/user.model";
+import {IUserForm, UserModel} from '../../models/user.model';
 
 @Component({
   selector: 'app-user-edit',
@@ -9,13 +9,13 @@ import {IUserForm, UserModel} from "../../models/user.model";
 export class UserEditComponent implements OnInit {
 
   @Input()
-  user:UserModel;
+  user: UserModel;
 
   @Output()
-  onUserUpdated:EventEmitter<IUserForm> = new EventEmitter()
+  onUserUpdated: EventEmitter<IUserForm> = new EventEmitter()
 
   @Output()
-  onUserDeleted:EventEmitter<UserModel> = new EventEmitter()
+  onUserDeleted: EventEmitter<UserModel> = new EventEmitter()
 
 
   constructor() { }
@@ -24,11 +24,11 @@ export class UserEditComponent implements OnInit {
   }
 
 
-  onSaveClicked(username:string,email:string){
-    this.onUserUpdated.emit({id:this.user.id,username,email});
+  onSaveClicked(username: string, email: string){
+    this.onUserUpdated.emit({id: this.user.id, username, email});
   }
 
-  onDeleteClicked(user:UserModel){
+  onDeleteClicked(user: UserModel){
     this.onUserDeleted.emit(user);
   }
 }

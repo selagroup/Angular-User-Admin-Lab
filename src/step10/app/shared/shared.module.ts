@@ -7,6 +7,6 @@ import { EllipsisPipe } from './ellipsis.pipe';
     CommonModule
   ],
   declarations: [EllipsisPipe],
-  exports:[EllipsisPipe]
+  exports: [EllipsisPipe]
 })
 export class SharedModule { }

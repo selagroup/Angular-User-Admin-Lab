@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {IUserForm, UserModel} from "../../models/user.model";
-import {UsersService} from "../users.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {IUserForm, UserModel} from '../../models/user.model';
+import {UsersService} from '../users.service';
+import {ActivatedRoute, Router} from '@angular/router';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 
@@ -14,9 +14,9 @@ import 'rxjs/add/operator/switchMap';
 })
 export class UserEditContainerComponent implements OnInit {
 
-  private currentUser:UserModel;
+  private currentUser: UserModel;
 
-  constructor(private service:UsersService,
+  constructor(private service: UsersService,
     private route: ActivatedRoute,
     private router: Router) {}
 
@@ -32,24 +32,24 @@ export class UserEditContainerComponent implements OnInit {
       .map(params => {
         return params['id']
       })
-      .switchMap(id=> this.service.getUser(id))
-      .subscribe(user=>{
+      .switchMap(id => this.service.getUser(id))
+      .subscribe(user => {
         this.currentUser = user;
       });
   }
 
-  updateUser(user:IUserForm){
+  updateUser(user: IUserForm){
 
-    this.service.updateUser(Object.assign({},this.currentUser,user))
-      .subscribe(user=> this.navigateToUsers())
+    this.service.updateUser(Object.assign({}, this.currentUser, user))
+      .subscribe(user => this.navigateToUsers())
 
 
 
   }
 
-  deleteUser(user:UserModel){
+  deleteUser(user: UserModel){
     this.service.deletedUser(user.id)
-      .subscribe(user=> this.navigateToUsers());
+      .subscribe(user => this.navigateToUsers());
 
   }
 
