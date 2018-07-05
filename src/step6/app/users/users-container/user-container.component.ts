@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserInfo, UserModel} from "../../models/user.model";
-import {UsersService} from "../users.service";
+import {UserInfo, UserModel} from '../../models/user.model';
+import {UsersService} from '../users.service';
 
 @Component({
   selector: 'app-user-container',
@@ -9,25 +9,25 @@ import {UsersService} from "../users.service";
 })
 export class UserContainerComponent implements OnInit {
 
-  private currentUser:UserModel;
-  private users:UserModel[];
+  private currentUser: UserModel;
+  private users: UserModel[];
 
-  constructor(private service:UsersService) {
+  constructor(private service: UsersService) {
 
 
   }
 
 
-  updateUser(user:UserModel){
+  updateUser(user: UserModel){
 
-      if(this.service.updateUser(user)){
+      if (this.service.updateUser(user)){
         this.getUsers();
       }
 
   }
 
-  deleteUser(user:UserModel){
-    if(this.service.deletedUser(user.id)){
+  deleteUser(user: UserModel){
+    if (this.service.deletedUser(user.id)){
       this.getUsers();
     }
   }
@@ -40,7 +40,7 @@ export class UserContainerComponent implements OnInit {
     this.getUsers();
   }
 
-  onItemClicked(user:UserModel){
+  onItemClicked(user: UserModel){
     this.currentUser = user;
   }
 

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {IUserForm} from "../../models/user.model";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {IUserForm} from '../../models/user.model';
 
 @Component({
   selector: 'app-user-form-reactive',
@@ -19,11 +19,11 @@ export class UserFormReactiveComponent implements OnInit {
   ngOnInit() {
 
     this.userForm = this.fb.group({
-      username:['',[Validators.required,Validators.minLength(4)]],
-      email:['',[Validators.email]],
-      firstName:'',
-      lastName:'',
-      avatar:''
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      email: ['', [Validators.email]],
+      firstName: '',
+      lastName: '',
+      avatar: ''
     })
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {IUserForm, UserInfo, UserModel} from "../../models/user.model";
-import {UsersService} from "../users.service";
+import {IUserForm, UserInfo, UserModel} from '../../models/user.model';
+import {UsersService} from '../users.service';
 
 @Component({
   selector: 'app-user-container',
@@ -9,16 +9,16 @@ import {UsersService} from "../users.service";
 })
 export class UserContainerComponent implements OnInit {
 
-  private currentUser:UserModel;
-  private users:UserModel[];
+  private currentUser: UserModel;
+  private users: UserModel[];
 
-  constructor(private service:UsersService) {}
+  constructor(private service: UsersService) {}
 
 
-  updateUser(user:IUserForm){
+  updateUser(user: IUserForm){
 
-      this.service.updateUser(Object.assign({},this.currentUser,user))
-        .subscribe((user)=>{
+      this.service.updateUser(Object.assign({}, this.currentUser, user))
+        .subscribe((user) => {
           this.getUsers();
         })
 
@@ -26,9 +26,9 @@ export class UserContainerComponent implements OnInit {
 
   }
 
-  deleteUser(user:UserModel){
+  deleteUser(user: UserModel){
     this.service.deletedUser(user.id)
-      .subscribe((data)=> {
+      .subscribe((data) => {
       console.log(data);
         this.getUsers();
       })
@@ -36,7 +36,7 @@ export class UserContainerComponent implements OnInit {
   }
   private getUsers(){
     this.service.getUsers()
-      .subscribe(users=> this.users = users);
+      .subscribe(users => this.users = users);
   }
 
   ngOnInit() {
@@ -44,7 +44,7 @@ export class UserContainerComponent implements OnInit {
     this.getUsers();
   }
 
-  onItemClicked(user:UserModel){
+  onItemClicked(user: UserModel){
     this.currentUser = user;
   }
 

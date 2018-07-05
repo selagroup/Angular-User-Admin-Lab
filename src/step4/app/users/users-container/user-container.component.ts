@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserInfo, UserModel} from "../../models/user.model";
+import {UserInfo, UserModel} from '../../models/user.model';
 
 @Component({
   selector: 'app-user-container',
@@ -8,8 +8,8 @@ import {UserInfo, UserModel} from "../../models/user.model";
 })
 export class UserContainerComponent implements OnInit {
 
-  private currentUser:UserModel;
-  private users:UserModel[];
+  private currentUser: UserModel;
+  private users: UserModel[];
 
   constructor() {
 
@@ -17,7 +17,7 @@ export class UserContainerComponent implements OnInit {
   }
 
 
-  updateUser(username:string,email:string){
+  updateUser(username: string, email: string){
     this.currentUser.email = email;
     this.currentUser.username = username;
   }
@@ -27,17 +27,17 @@ export class UserContainerComponent implements OnInit {
 
 
     this.users =  [
-      new UserModel(0,'johndoe','johndoe@gmail.com',
-        new UserInfo('John','Doe','Clerk','http://authenticgoods.co/wrapbootstrap/themes/sparks/img/team/avatar-male.png')
+      new UserModel(0, 'johndoe', 'johndoe@gmail.com',
+        new UserInfo('John', 'Doe', 'Clerk', 'http://authenticgoods.co/wrapbootstrap/themes/sparks/img/team/avatar-male.png')
       ),
-      new UserModel(1,'janedoe','janedoe@gmail.com',
-        new UserInfo('Jane','Doe','Developer','http://brandonmathis.com/projects/fancy-avatars/demo/images/avatar_female_dark_on_clear_200x200.png')
+      new UserModel(1, 'janedoe', 'janedoe@gmail.com',
+        new UserInfo('Jane', 'Doe', 'Developer', 'http://brandonmathis.com/projects/fancy-avatars/demo/images/avatar_female_dark_on_clear_200x200.png')
       ),
-      new UserModel(2,'johnsmith','johnsmith@gmail.com',
-        new UserInfo('John','Smith','Sales','http://authenticgoods.co/wrapbootstrap/themes/sparks/img/team/avatar-male.png')
+      new UserModel(2, 'johnsmith', 'johnsmith@gmail.com',
+        new UserInfo('John', 'Smith', 'Sales', 'http://authenticgoods.co/wrapbootstrap/themes/sparks/img/team/avatar-male.png')
       ),
-      new UserModel(3,'janesmith','janesmith@gmail.com',
-        new UserInfo('Jane','DBA','Developer','http://brandonmathis.com/projects/fancy-avatars/demo/images/avatar_female_dark_on_clear_200x200.png')
+      new UserModel(3, 'janesmith', 'janesmith@gmail.com',
+        new UserInfo('Jane', 'DBA', 'Developer', 'http://brandonmathis.com/projects/fancy-avatars/demo/images/avatar_female_dark_on_clear_200x200.png')
       ),
 
 
@@ -45,7 +45,7 @@ export class UserContainerComponent implements OnInit {
 
   }
 
-  onItemClicked(user:UserModel){
+  onItemClicked(user: UserModel){
     this.currentUser = user;
   }
 
