@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {IUserForm, UserModel} from "../../models/user.model";
 import {UsersService} from "../users.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
+
+
 
 @Component({
   selector: 'app-user-edit-container',
