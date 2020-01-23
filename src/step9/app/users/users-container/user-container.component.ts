@@ -12,7 +12,6 @@ import {Observable} from 'rxjs';
 export class UserContainerComponent implements OnInit {
 
   private currentUser: UserModel;
-  private users: UserModel[];
 
   private users$: Observable<UserModel[]>;
 

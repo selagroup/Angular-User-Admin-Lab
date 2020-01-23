@@ -75,7 +75,7 @@ In This project we will build step by step a User Admin angular application.
   - use the `*ngFor` directive to loop over the `users` array and render the user element for every item in the array.
   - For every item add a click event that will set the `currentUser` to the user item that was clicked.
   - The edit form should display only when there is a `currentUser` selected (use *ngIf).
-  - When an item is clicked it should be displayed with a colored background (use *ngClass).
+  - When an item is clicked it should be displayed with a colored background (use [ngClass]).
   
 ### Step 5  - Composition
 

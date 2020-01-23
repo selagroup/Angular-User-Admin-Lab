@@ -11,9 +11,7 @@ export class UserContainerComponent implements OnInit {
   private currentUser: UserModel;
   constructor() {
 
-    this.currentUser = new UserModel(0, 'johndoe', 'johndoe@gmail.com',
-      new UserInfo('John', 'Doe', 'Clerk', 'http://authenticgoods.co/wrapbootstrap/themes/sparks/img/team/avatar-male.png'));
-
+    this.currentUser;
   }
 
 
@@ -24,6 +22,9 @@ export class UserContainerComponent implements OnInit {
 
   ngOnInit() {
     console.log('User Container Init');
+    this.currentUser = new UserModel(0, 'johndoe', 'johndoe@gmail.com',
+      new UserInfo('John', 'Doe', 'Clerk', 'http://authenticgoods.co/wrapbootstrap/themes/sparks/img/team/avatar-male.png'));
+
   }
 
 }
